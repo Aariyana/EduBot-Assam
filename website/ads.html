@@ -1,1 +1,23 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Watch Ad to Download</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-YOUR_ADSENSE_ID"></script>
+</head>
+<body>
+    <h1>Please watch ad for 40 seconds</h1>
+    <div id="countdown">40</div>
+    <script>
+        let seconds = 40;
+        const timer = setInterval(() => {
+            seconds--;
+            document.getElementById("countdown").innerText = seconds;
+            if(seconds <= 0) {
+                clearInterval(timer);
+                window.location.href = "https://drive.google.com/file/d/PDF_ID/view"; 
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

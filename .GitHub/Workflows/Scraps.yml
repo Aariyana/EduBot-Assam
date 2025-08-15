@@ -1,0 +1,13 @@
+name: Daily Scraper
+on:
+  schedule:
+    - cron: "0 3 * * *"  # প্ৰতিদিন 3 AM UTC
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -r requirements.txt
+      - env:
+          DRIVE_API_JSON: ${{ secrets.DRIVE_API_JSON }}
+        run: python bot/scraper.py

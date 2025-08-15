@@ -6,7 +6,8 @@ import pymongo
 # MongoDB Connection
 client = pymongo.MongoClient(os.getenv("MONGODB_URI"))
 db = client.education_bot
-
+# app = Application.builder().token(os.getenv("TELEGRAM_TOKEN")).build()  # এই লাইন কমেণ্ট কৰক
+app = Application.builder().token("7233321528:AAGpnOqQd-9vjfR1UXnkUyTLViL1KoAAT4I").build()   # প্ৰত্যক্ষভাৱে দিয়ক
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("📚 Welcome! Use /qa [topic] for questions")
 
